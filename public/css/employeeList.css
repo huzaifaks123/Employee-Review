@@ -1,0 +1,10 @@
+ul{
+    margin-top: 5rem;
+}
+ul li{
+    text-decoration: none;
+    list-style: none;
+}
+li .btn{
+    width: 6rem;
+}

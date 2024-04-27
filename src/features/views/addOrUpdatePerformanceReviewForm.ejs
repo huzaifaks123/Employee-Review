@@ -1,0 +1,14 @@
+<div id="review-list-container"  class="w-50 mt-5 mx-auto">
+    <h1 class="text-center">Add New <span class="text-info">Review!</span></h1>
+    <form class="d-flex flex-column" action="/<%= review ? 'review/updateReviewTask/' + review.id : 'review/addReviewTask' %>" id="login-form" method="post">
+        <div class="mb-3">
+            <label for="InputTitle" class="form-label">Title</label>
+            <input type="text" value="<%= review?review.title:"" %>" class="form-control" name="title" id="title" required>
+        </div>
+        <div class="mb-5">
+            <label for="InputObjective" class="form-label">Objective</label>
+            <input type="text" value="<%= review?review.objective:"" %>" class="form-control" name="objective" id="objective" required>
+        </div>
+        <button type="submit" class="btn btn-info text-light">Submit</button>
+    </form>
+</div>

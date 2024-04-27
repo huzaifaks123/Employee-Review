@@ -1,0 +1,6 @@
+ol a{
+    text-decoration: none;
+}
+ol li:hover{
+    background-color: #92b1d876;
+}

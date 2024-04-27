@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/css/home.css">
+<% if(user){%>
+  <h2 class="text-center text-info my-5">performance review</h2>
+  <% if(reviewList.length !=0){for(review of reviewList){%>
+    <ol class="list-group list-group-numbered w-75 mx-auto ">
+      <a href="/review/getFeedbackForm/<%= review.id %>">
+        <li class="list-group-item d-flex justify-content-between align-items-start my-2 rounded">
+          <div class="ms-2">
+            <div class="fw-bold">
+              <%= review.title %>
+            </div>
+            <%= review.objective %>
+          </div>
+        </li>
+      </a>
+    </ol>
+    <%}}else{%>
+      <h2 class="text-center mt-5">No Assignment Available</h2>
+      <%}%>
+        <%}else{%>
+          <h4 class="w-75 text-center mx-auto mt-5">Peer review is a quality assurance process where Employee evaluate
+            and provide feedback on scholarly or
+            professional work their colleague, ensuring its accuracy and integrity before publication. It helps improve the work's
+            quality and maintains standards in academic and professional communities.</h4>
+          <%}%>

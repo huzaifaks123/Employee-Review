@@ -1,0 +1,17 @@
+<div class="login-container w-50 mt-5 mx-auto">
+    <h1 class="text-center">Login <span class="text-info">Page!</span></h1>
+    <form action="/user/login" id="login-form" method="post">
+        <div class="mb-3">
+            <label for="InputEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="email" id="email" required>
+        </div>
+        <div class="mb-5">
+            <label for="InputPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="password" required>
+        </div>
+        <button type="submit" class="btn btn-info w-25 text-light">Submit</button>
+    </form>
+    <div id="already" class="text-end mx-auto">
+        New User? Register here &nbsp;&nbsp;&nbsp; <a href="/user/register"><button class="btn btn-info w-25 text-light">Register</button></a>
+    </div>
+</div>

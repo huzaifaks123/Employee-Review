@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/css/employeeList.css">
+
+<a class="position-absolute end-0 " href="/user/addEmployee"><button type="button" class="btn btn-outline-info my-4 me-3">Add New Employee</button>
+</a>
+
+<ul class="w-75 mx-auto">
+    <% for(employee of employees){ %>
+        <li class="border border-info my-2 rounded p-2">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h3><%= employee.name %></h3>
+                    <a href="/user/updateEmployee/<%= employee.id %>"><button class="btn btn-outline-info">Edit</button></a>
+                    <button class="btn btn-outline-danger" onclick="deleteEmployee('<%= employee.id %>')">remove</button>
+
+                </div>
+                <div class="form-check form-switch d-flex align-items-center">
+                    <input class="form-check-input text-info" onchange="toggleRole('<%= employee.id %>')" type="checkbox" role="switch" id="flexSwitchCheckDefault" <%= employee.role=="admin"?"checked":"" %>>
+                    <label class="form-check-label ms-2 fs-5" for="flexSwitchCheckDefault">admin</label>
+                </div>
+            </div>
+            <%}%>
+        </li>
+</ul>
+
+<script src="/js/employee.js"></script>

@@ -1,0 +1,19 @@
+<div id="login-container" class="w-50 mt-5 mx-auto">
+    <h1 class="text-center">Review <span class="text-info">Page!</span></h1>
+    <form class="d-flex flex-column" action="/review/addFeedback/<%= reviewId %>/<%= user.name %>" id="login-form" method="post">
+        <label for="InputPeer" class="form-label">Peer Name</label>
+        <select class="form-select mb-3" name="employee" aria-label="Default select example"  required>
+            <option value="" disable selected hidden>Select Employee</option>
+            <% for(employee of employees){%>
+                <option value="<%= employee.name %>">
+                    <%= employee.name %>
+                </option>
+                <%} %>
+        </select>
+        <div class="mb-5">
+            <label for="InputObjective" class="form-label">Review</label>
+            <textarea type="text" class="form-control" name="review" id="review"  required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

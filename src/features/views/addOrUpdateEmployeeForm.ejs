@@ -1,0 +1,14 @@
+<div id="employee-form-container" class="w-50 mt-5 mx-auto">
+    <h1 class="text-center">Add New <span class="text-info">Employee!</span></h1>
+    <form class="d-flex flex-column" action="/<%= employee ? 'user/update/' + employee.id : 'user/register' %>" id="login-form" method="post">
+        <div class="mb-3">
+            <label for="InputName" class="form-label">Name</label>
+            <input type="text" value="<%= employee?employee.name:"" %>" class="form-control" name="name" id="name" required>
+        </div>
+        <div class="mb-5">
+            <label for="InputEmail" class="form-label">Email</label>
+            <input type="email" value="<%= employee?employee.email:"" %>" class="form-control" name="email" id="email" required>
+        </div>
+        <button type="submit" class="btn btn-info text-light">Submit</button>
+    </form>
+</div>

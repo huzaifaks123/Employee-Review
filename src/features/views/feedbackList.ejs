@@ -1,0 +1,17 @@
+<div class="list-group w-75 mx-auto mt-4">
+  <% if(feedbacks.length !=0){for(feedback of feedbacks){ %>
+    <div class="list-group-item list-group-item-action my-2 rounded">
+      <div class="d-flex w-100 justify-content-between">
+        <h6 class="mb-1">
+          <%= feedback.userName %> posted feedback for
+        </h6>
+      </div>
+      <p class="mb-1">
+        <%= feedback.employee %>
+      </p>
+      <small class="text-body-secondary">Post :- <%= feedback.review %></small>
+    </div>
+    <%}}else{%>
+      <h2>No Feedback Available</h2>
+      <%}%>
+</div>

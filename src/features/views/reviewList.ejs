@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="/css/reviewList.css">
+
+<a class="position-absolute end-0 " href="/review/addReviewTask"><button type="button"
+        class="btn btn-outline-info my-4 me-3">Add New Review</button>
+</a>
+
+<ul class="w-75 mx-auto">
+    <% for(review of reviews){ %>
+        <li class="border border-info my-2 rounded p-2">
+            <div class="d-flex align-items-center">
+                <div class="me-auto">
+                    <h3>
+                        <%= review.title %>
+                    </h3>
+                    <%= review.objective %>
+                </div>
+                <a class=" m-1" href="/review/updateReviewTask/<%= review.id %>"><button
+                        class="btn btn-outline-info">update</button></a>
+                <a class=" m-1" href="/review/getReviewFeedback/<%= review.id %>"><button
+                        class="btn btn-outline-info">Show
+                        Feedback</button></a>
+                <button class="btn btn-outline-danger m-1" onclick="deleteReview('<%= review.id %>')">remove</button>
+            </div>
+            <form class=" d-flex justify-content-between align-items-center mt-4"
+                action="/review/assignEmployee/<%= review.id %>" method="post">
+                <select class="form-select me-3 mb-0" name="employee" aria-label="Default select example">
+                    <option value="" disable selected hidden>Select Employee</option>
+                    <% for(employee of employees){%>
+                        <option value="<%= employee.id %>">
+                            <%= employee.name %>
+                        </option>
+                        <%} %>
+                </select>
+                <input class="btn btn-info text-light" type="submit" value="Add Employee">
+            </form>
+        </li>
+        <%}%>
+</ul>
+
+<script src="/js/review.js"></script>
